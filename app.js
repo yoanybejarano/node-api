@@ -8,6 +8,7 @@ app.use(morgan('dev'));
 consign()
       .include("db.js")
       .then("models")
+      .then("auth.js")
       .then("libs/middlewares.js")
       .then("routes")
       .then("libs/boot.js")
