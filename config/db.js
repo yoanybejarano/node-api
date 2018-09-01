@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     dateFormat = require('dateformat'),
-    logger = require('./libs/logger');
+    logger = require('../libs/logger');
 
 mongoose.connect('mongodb://localhost:27017/northwind', {useNewUrlParser: true})
     .then(() => console.log('*** database connection succesful ***'))
@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/northwind', {useNewUrlParser: true})
 /*Logging database*/
 mongoose.set('debug', function (collectionName, method, query, doc) {
     var date = dateFormat(new Date(), "ddd, mm-dd-yy h:MM:ss TT");
-    var lineLog = date + ' - ' + collectionName + ' - ' + method ;
+    var lineLog = date + ' collection:' + collectionName + ' method:' + method ;
     logger.info(lineLog);
 });
 

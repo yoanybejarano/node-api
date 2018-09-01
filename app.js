@@ -6,7 +6,7 @@ const app = express();
 app.use(morgan('dev'));
 
 consign()
-      .include("db.js")
+      .include("config/db.js")
       .then("models")
       .then("libs/middlewares.js")
       .then("routes")

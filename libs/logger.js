@@ -12,7 +12,8 @@ module.exports = winston.createLogger({
             filename: "logs/app.log",
             maxsize: 1048576,
             maxFiles: 10,
-            colorize: true
+            colorize: true,
+            json: false
         }),
         new (winston.transports.Console)({
             uncaughtException: true,
