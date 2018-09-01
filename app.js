@@ -8,8 +8,20 @@ app.use(morgan('dev'));
 consign()
       .include("db.js")
       .then("models")
-      .then("auth.js")
       .then("libs/middlewares.js")
       .then("routes")
       .then("libs/boot.js")
       .into(app);
+
+
+/*Test*/
+// consign({verbose: false})
+//     .include("libs/config.js")
+//     .include("db.js")
+//     .then("models")
+//     .then("libs/middlewares.js")
+//     .then("routes")
+//     .then("libs/boot.js")
+//     .into(app);
+
+//module.exports = app;
