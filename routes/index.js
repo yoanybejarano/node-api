@@ -8,6 +8,7 @@ module.exports = app => {
      *    {"status": "NTask API"}
      */
     app.get("/", (req, res) => {
-      res.json({status: "NTask API"});
+      //res.json({status: "Node.js API"});
+      res.render('index');
     });
   };
